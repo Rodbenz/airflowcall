@@ -1,5 +1,5 @@
 var express = require('express');
-const { dageRun } = require('../Controller/dage');
+const { dageRun, taskInstances, taskInstancesLog, dageRunConfig } = require('../Controller/dage');
 
 
 
@@ -12,5 +12,8 @@ router.get('/', function (req, res, next) {
 
 
 router.post('/dageRun', dageRun);
+router.post('/dageRunConfig', dageRunConfig);
+router.post('/taskInstances', taskInstances);
+router.post('/taskInstancesLog', taskInstancesLog);
 
 module.exports = router;
