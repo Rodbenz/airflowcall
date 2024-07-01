@@ -1,7 +1,5 @@
 var express = require('express');
-const { dageRun, taskInstances, taskInstancesLog, dageRunConfig } = require('../Controller/dage');
-
-
+const { webhook, richmenu } = require('../Controller/line');
 
 var router = express.Router();
 
@@ -10,10 +8,8 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post('/webhook', webhook);
 
-router.post('/dageRun', dageRun);
-router.post('/dageRunConfig', dageRunConfig);
-router.post('/taskInstances', taskInstances);
-router.post('/taskInstancesLog', taskInstancesLog);
+router.post('/richmenu', richmenu);
 
 module.exports = router;
